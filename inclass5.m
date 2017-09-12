@@ -8,6 +8,40 @@
 % function. (c) Redo part (b) but make the option to specify the fraction
 % of black/white pixels optional with a default value of 1% if not
 % specified. 
+%answer a:
+function cc=show(x)
+I=imread(x);
+J=imadjust(I,stretchlim(I),[0.01 0.99]);
+figure
+cc=imshow(J)
+end
+
+%answer b:
+
+function cc=show(x,y)
+I=imread(x);
+J=imadjust(I,stretchlim(I),[y 1-y]);
+figure
+cc=imshow(J)
+end
+%y has to be a number between 0 and 1. y is the fraction of the pixels you want to display.
+
+%answer c:
+function cc=show(x,y)
+if nargin==2
+    I=imread(x);
+    J=imadjust(I,stretchlim(I),[y 1-y]);
+    figure
+    cc=imshow(J)
+elseif nargin==1
+    I=imread(x);
+    J=imadjust(I,stretchlim(I),[0.01 0.99]);
+    figure
+    cc=imshow(J)
+end
+        
+end
+
 
 %2. Write a function to take the reverse complement of a DNA sequence, that
 %is, returns the complementary base pair for each base, read from end
