@@ -24,7 +24,7 @@ J=imadjust(I,stretchlim(I),[y 1-y]);
 figure
 cc=imshow(J)
 end
-%y has to be a number between 0 and 1. y is the fraction of the pixels you want to display.
+%y has to be a number between 0 and 0.5. y is the fraction of the pixels you want to display.
 
 %answer c:
 function cc=show(x,y)
