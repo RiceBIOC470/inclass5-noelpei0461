@@ -1,3 +1,5 @@
+%AW. See comment below. 0.8/1.
+
 %Inclass assignment 5. 
 
 % 1. (a) Write a function that reads in an image and displays it so that 1%
@@ -17,6 +19,9 @@ cc=imshow(J)
 end
 
 %answer b:
+%AW: This doesn't work. It decreases contrast rather than increases it when y is increased. Should be:
+%J=imadjust(I,stretchlim(I,[y 1-y]));
+%-0.2.
 
 function cc=show(x,y)
 I=imread(x);
